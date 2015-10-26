@@ -1,0 +1,234 @@
+/* Fix user-agent */
+#right {
+	background-color:black;
+}
+
+#word-container {
+	width:100%;
+	float:left;
+	text-align:center;
+}
+
+#letters{
+	min-height:18px;
+}
+
+#letters-container {
+	border-width:2px;
+	border-style:solid;
+	width:100%;
+	max-width:660px;
+	text-align:center;
+	margin: 0 auto;
+	margin-top:20px;
+	padding-bottom:15px;
+	padding-top:15px;
+}
+
+#words {
+	margin: 0 auto;
+	margin-top:25px;
+  max-width:660px;
+  min-height:60px;
+	width:100%;
+	display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.flipButton {
+	border-width:2px;
+	border-style:solid;
+	width:70px;
+	margin:0 auto;
+	margin-top:10px;
+	background-color:black;
+	color:white;
+	padding:3px;
+}
+
+#words div {
+	padding:15px 5px;
+	border-width: 2px;
+	margin-bottom:20px;
+	border-style: solid;
+  min-height:60px;
+	width:320px;
+}
+
+h2 {
+	margin-top:0;
+}
+
+#words span {
+	min-height:20px;
+	margin-right:10px;
+	min-width:50px;
+}
+
+body {
+	width:100%;
+}
+#left {
+  float: left !important;
+	background-repeat: no-repeat;
+	background-size:   cover;
+	width:70%;
+}
+#right {
+	width:30%;
+	float:left;
+	height:100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, input {
+  font-family:
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    "Lucida Grande",
+    sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  word-wrap: break-word;
+}
+
+/* Pages */
+
+.pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.page {
+  height: 92%;
+  width: 100%;
+}
+
+/* Login Page */
+
+.login.page {
+  background-color: #000;
+}
+
+.login.page .form {
+  height: 100px;
+  margin-top: -100px;
+
+	padding-top:200px;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+
+.login.page .form .usernameInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+	padding-top:20px;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+.login.page .title {
+  font-size: 200%;
+}
+
+.login.page .usernameInput {
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+.login.page .title, .login.page .usernameInput {
+  color: #fff;
+  font-weight: 100;
+}
+
+/* Chat page */
+
+.chat.page {
+  display: none;
+}
+
+/* Font */
+
+.messages {
+  font-size: 150%;
+}
+
+.inputMessage {
+  font-size: 100%;
+}
+
+.log {
+  color: gray;
+  font-size: 70%;
+  margin: 5px;
+  text-align: center;
+}
+
+/* Messages */
+
+.chatArea {
+  height: 100%;
+  padding-bottom: 60px;
+}
+
+.messages {
+  height: 100%;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 10px 20px 10px 20px;
+}
+
+.message.typing .messageBody {
+  color: gray;
+}
+
+.username {
+  font-weight: 700;
+  overflow: hidden;
+  padding-right: 15px;
+  text-align: right;
+}
+
+/* Input */
+
+.inputMessage {
+  border: 10px solid #000;
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  outline: none;
+  padding-left: 10px;
+  right: 0;
+  width: 100%;
+}
