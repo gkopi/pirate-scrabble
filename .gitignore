@@ -1,1 +1,5 @@
 node_modules/*
+Vagrantfile
+bootstrap.sh
+import_test.js
+WordTest.js
