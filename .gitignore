@@ -1,6 +1,3 @@
 node_modules/*
-.vagrant/*
-Vagrantfile
-bootstrap.sh
 import_test.js
 WordTest.js
