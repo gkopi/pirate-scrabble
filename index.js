@@ -68,27 +68,44 @@ io.on('connection', function (socket) {
   // when the client emits 'add user', this listens and executes
   socket.on('add user', function (username) {
     // we store the username in the socket session for this client
-    socket.username = username;
-    // add the client's username to the global list
-		users[username] = {};
-		users[username]['words'] = [];
-		users_to_usernames[username] = game.create_user(username)
-    usernames[username] = username;
-    ++numUsers;
-    addedUser = true;
-    socket.emit('login', {
-      numUsers: numUsers
-    });
-    // echo globally (all clients) that a person has connected
-    socket.broadcast.emit('user joined', {
-      username: socket.username,
-      numUsers: numUsers
-    });
-		io.sockets.emit('update display', { 
-			users: users,
-			letters: game.get_open_letters()
-		});
+		if(isAvailable(username)) {
+			socket.username = username;
+			// add the client's username to the global list
+			users[username] = {};
+			users[username]['words'] = [];
+			users_to_usernames[username] = game.create_user(username)
+			usernames[username] = username;
+			++numUsers;
+			addedUser = true;
+			socket.emit('login', {
+				numUsers: numUsers
+			});
+			// echo globally (all clients) that a person has connected
+			socket.broadcast.emit('user joined', {
+				username: socket.username,
+				numUsers: numUsers
+			});
+			socket.emit('update username', {
+				username: username
+			});
+
+			io.sockets.emit('update display', { 
+				users: users,
+				letters: game.get_open_letters()
+			});
+		} else {
+			socket.emit('username invalid', {
+				username: socket.username
+			});
+		}	
   });
+
+	function isAvailable(username) {
+		if(usernames[username]) {
+			return false;
+		} 
+		return true;
+	}
 
   // when the client emits 'typing', we broadcast it to others
   function flipTile() {

@@ -42,22 +42,29 @@ $(function() {
 
   // Sets the client's username
   function setUsername () {
-    username = cleanInput($usernameInput.val().trim());
+    potential_username = cleanInput($usernameInput.val().trim());
 
     // If the username is valid
-    if (username) {
-      $loginPage.fadeOut();
-			$( "#right" ).css("background-color","transparent");
-      $chatPage.show();
-      $loginPage.off('click');
-      $currentInput = $inputMessage.focus();
-			
-			appendUsersWordsDiv(username);
-      
+    if (potential_username) {
 			// Tell the server your username
-      socket.emit('add user', username);
+      socket.emit('add user', potential_username);
     }
   }
+
+	socket.on('username invalid', function(data) {
+		$( "#login-title" ).html("Sorry, that name is already taken.");	
+	});
+
+	socket.on('update username', function (data) {
+		username = data.username;
+		$loginPage.fadeOut();
+		$( "#right" ).css("background-color","transparent");
+		$chatPage.show();
+		$loginPage.off('click');
+		$currentInput = $inputMessage.focus();
+		
+		appendUsersWordsDiv(data.username);
+  });
 
   // Sends a chat message
   function sendMessage () {

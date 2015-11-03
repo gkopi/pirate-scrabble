@@ -1,4 +1,7 @@
-var game = require('./Game.js');
-console.log(game.flip_tile());
-console.log(game.flip_tile());
-console.log(game.get_words_by_username('letter_bag').length);
+var request = require("request");
+
+request({
+	uri: "http://www.oed.com/srupage?operation=searchRetrieve&query=cql.serverChoice+=+forest&maximumRecords=100&startRecord=1",
+}, function(error, response, body) {
+  console.log(body);
+});

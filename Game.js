@@ -105,6 +105,7 @@ function remove_parts(parts) {
 	function is_not_removed(word) {
 		for(var i = 0; i < parts.length; i++) {
 			if(word.is_equal(parts[i])) {
+				parts.splice(i,1);
 				return false;
 			}
 		}

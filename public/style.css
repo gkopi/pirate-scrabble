@@ -1,6 +1,13 @@
 /* Fix user-agent */
+.page-container {
+	width:100%;
+	height:100%;
+}
+
 #right {
 	background-color:black;
+	position:absolute;
+	right:0;
 }
 
 #word-container {
@@ -69,6 +76,7 @@ h2 {
 	min-height:20px;
 	margin-right:10px;
 	min-width:50px;
+	float:left;
 }
 
 body {
@@ -127,7 +135,7 @@ ul {
 }
 
 .page {
-  height: 92%;
+  height: 100%;
   width: 100%;
 }
 
@@ -223,6 +231,7 @@ ul {
 /* Input */
 
 .inputMessage {
+	position:absolute;
   border: 10px solid #000;
   bottom: 0;
   height: 60px;
